@@ -1,22 +1,23 @@
 # Welcome!
 `Triqadafi Frequency Counter`  
-Handcrafted 8 channel frequency counter
+Handcrafted high resolution 8 channel frequency counter
 
 
 ## Compatible Hardware
-### `UBFC-08RS` (SPARTAN 6 L9)
+### `UBFC-08RS` (XC6SLX9)
 ![Current Device](https://github.com/triqadafi/Triqadafi_FrequencyCounter/blob/master/images/device_1.jpg?raw=true)
 Spesifikasi:
-- Total Channel: 8
-- Channel Input: 3.3 volt square wave (recommended)
-- FPGA: Spartan 6
-- Clock Source: OCXO 100 MHz
-- Input: 5V
-- Communication Interface: SPI
-- Flash Memory: W25Q 16Mbit
-- Other: PLL Frequency (300 MHz Reference, 100 MHz Time Gate)
+- Total Channel: 8 (SMA footprint)
+- Channel Input: 3.3 volt, DC, square wave (recommended)
+- FPGA: Spartan 6E XC6SLX9
+- Clock Source: OCXO/TCXO
+- Clock Frequency: 100 MHz
+- Input: 5V DC
+- Communication Interface: SPI (Arduino Compatible)
+- Flash Memory: W25Q 16MB
+- Other: PLL Frequency (300 MHz Reciprocal Reference, 100 MHz Time Gate)
 
-### `UBFC 08TS` (SPARTAN 6 L16)
+### `UBFC 08TS` (XC6SLX16)
 - Coming soon!
 
 
@@ -29,7 +30,7 @@ The library can be installed using the [standard Arduino library install procedu
 - Save the .zip file to your desktop,
 - Open Arduino IDE
 - Go to Menu > `Sketch > Include Library > Add .ZIP library...`
-- Run [example file](https://github.com/triqadafi/Triqadafi_FrequencyCounter/tree/master/examples) if you wish.
+- Run some [example files](https://github.com/triqadafi/Triqadafi_FrequencyCounter/tree/master/examples) if you wish.
 
 
 # Constructor
@@ -68,17 +69,19 @@ QCM_Array.frequencyRead(channel);
 ```
 Parameter **channel** 
 - berisi nama channel yang ingin dibaca `CH_1` hingga `CH_8`
-- atai dapat menggunakan integer `0-7` (mewakili channel 1-8)
+- atau dapat menggunakan integer `0-7` (mewakili channel 1-8)
+
+
 ```diff
 - !! WARNING !!
+```
 Dikarenakan proses perhitungan memerlukan `double`, pastikan menggunakan mikrokontroler dengan arsitektur 32 bit atau mikrokontroler yang mendukung operasi double precission floating point. Hal sangat disarankan untuk sehingga nantinya menjadi sangat mudah.
 
 Menggunakan `double` pada mikrokontroler 8 bit akan sama dengan menggunakan `float`. Hal ini berarti menggunakan single precission sehingga akan kehilangan resolusi. Hal ini sebenarnya dapat diatasi dengan menggunakan ekstensi contohnya https://fp64lib.org/. Perlu dipahami dulu boss ~
-```
 
 
 # Example
-Read single channel every second
+Read single channel every second (STM32 Bluepill)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
@@ -96,7 +99,7 @@ void loop() {
 }
 ```
 ----------
-Read All Channel every second
+Read All Channel every second (STM32 Bluepill)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
@@ -122,3 +125,5 @@ void loop() {
 # Other Things
 - My Instagram: [@triqadafi](http://instagram.com/triqadafi)
 - My Website: [triqada.fi](http://triqada.fi)
+
+# THANKS :sparkling_heart:	
