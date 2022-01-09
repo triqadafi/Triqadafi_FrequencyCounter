@@ -2,7 +2,7 @@
 `Frequency Counter`  
 
 ## Device `(SPARTAN 6)`
-![Current Device](https://github.com/triqadafi/Triqadafi_FrequencyCounter/blob/master/images/device.jpg?raw=true)
+![Current Device](https://github.com/triqadafi/Triqadafi_FrequencyCounter/blob/master/images/device_1.jpg?raw=true)
 Spesifikasi:
 - Total Channel: 8
 - Channel Input: 3.3 volt square wave (recommended)
