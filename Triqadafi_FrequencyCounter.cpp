@@ -17,6 +17,12 @@ double Triqadafi_FrequencyCounter::frequencyRead(uint8_t channel){
   Serial.println(chx);
   return chx*_REFERENCE_FREQUENCY/ref;
 }
+double Triqadafi_FrequencyCounter::frequencyRead(int channel){
+  return frequencyRead((uint8_t)channel);
+}
+double Triqadafi_FrequencyCounter::frequencyRead(Triqadafi_Channels channel){
+  return frequencyRead((uint8_t)channel);
+}
 
 uint32_t Triqadafi_FrequencyCounter::readRegister(byte addr){
   digitalWrite (_PIN_SS, LOW);        // reset Slave Select

@@ -5,6 +5,17 @@
 #ifndef Triqadafi_FrequencyCounter_h
 #define Triqadafi_FrequencyCounter_h
 
+enum Triqadafi_Channels {
+  CH_1,
+  CH_2,
+  CH_3,
+  CH_4,
+  CH_5,
+  CH_6,
+  CH_7,
+  CH_8
+};
+
 /**
  * @brief test coba coba tentang brief
  * 
@@ -23,14 +34,16 @@ class Triqadafi_FrequencyCounter
     Triqadafi_FrequencyCounter(uint8_t PIN_SS, long reference_frequency);
 
     /**
-     * @brief Fungsi untuk mengatur sinyal input ke TEC berupa sinyal PWM
+     * @brief Fungsi untuk membaca nilai frekuensi pada channel
      * 
      * @param channel channel yang dibaca 0-7
      */
     double frequencyRead(uint8_t channel);
+    double frequencyRead(int channel);
+    double frequencyRead(Triqadafi_Channels channel);
 
     /**
-     * @brief Inisialisasi pin dan konfigurasi pin PWM mikrokontroler
+     * @brief Inisialisasi
      * 
      */
     void begin();
