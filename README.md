@@ -5,7 +5,7 @@ Handcrafted high resolution 8 channel frequency counter
 
 ## Compatible Hardware
 ### `UBFC-08RS` (XC6SLX9)
-![Current Device](https://github.com/triqadafi/Triqadafi_FrequencyCounter/blob/master/images/device_1.jpg?raw=true)
+![Current Device](https://github.com/triqadafi/Triqadafi_FrequencyCounter/blob/master/images/device_cap-100.jpg?raw=true)
 Spesifikasi:
 - Total Channel: 8 (SMA footprint)
 - Channel Input: 3.3 volt, DC, square wave (recommended)
@@ -126,4 +126,4 @@ void loop() {
 - My Instagram: [@triqadafi](http://instagram.com/triqadafi)
 - My Website: [triqada.fi](http://triqada.fi)
 
-# THANKS :sparkling_heart:	
+# SUWUN! :sparkling_heart:	
