@@ -1,6 +1,8 @@
 #include <Triqadafi_FrequencyCounter.h>
 
-Triqadafi_FrequencyCounter QCM_Array(PB0, 300000000); // SS_N, Reference Frequency 300MHz
+Triqadafi_FrequencyCounter QCM_Array(10, 300000000);
+// Using SS pin 10 Arduino Nano
+// Reference Frequency 300MHz
 
 void setup() {
   QCM_Array.begin();

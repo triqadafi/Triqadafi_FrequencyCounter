@@ -14,8 +14,13 @@ void Triqadafi_FrequencyCounter::begin(){
 double Triqadafi_FrequencyCounter::frequencyRead(uint8_t channel){
 	unsigned long chx = readRegister(0b00010000 | channel);
 	unsigned long ref = readRegister(0b00100000 | channel);
-  Serial.println(chx);
-  return chx*_REFERENCE_FREQUENCY/ref;
+  // Serial.println(chx);
+  // Serial.println(ref);
+  if(ref == 0){
+    return 0;
+  }else{
+    return chx*_REFERENCE_FREQUENCY/ref;
+  }
 }
 double Triqadafi_FrequencyCounter::frequencyRead(int channel){
   return frequencyRead((uint8_t)channel);
