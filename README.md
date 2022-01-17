@@ -138,12 +138,12 @@ void loop() {
 
 # Troubleshooting :space_invader:
 ## Data tidak terbaca atau tidak berubah?
-- pastikan LED kiri bawa berkedip dengan delay 1 detik.
-- jika LED mati"
+- pastikan LED kiri bawah berkedip dengan delay 1 detik.
+- jika LED mati:
   - kemungkinan besar Board kekurangan daya.
   - gunakan power supply eksternal! 
 - Salah satu kabel tidak terhubung!
-- Salah koneksi pin
+- Salah koneksi pin!
 
 # Other Things
 - My Instagram: [@triqadafi](http://instagram.com/triqadafi)
