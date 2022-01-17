@@ -50,9 +50,9 @@ misal:
 
 Example:
 ```c++
-Triqadafi_FrequencyCounter QCM_Array(10, 300000000);
+Triqadafi_FrequencyCounter QCM_Array(PA4, 300000000);
 ```
-Initialize the device, using pin D10 as SS pin, and reference frequency 300 MHz.
+Initialize the device (STM32 Bluepill), using pin PA4 as SS pin, and reference frequency 300 MHz.
 
 
 ## Methods
@@ -100,7 +100,7 @@ Read single channel every second (**STM32 Bluepill**)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
-Triqadafi_FrequencyCounter QCM_Array(PB0, 300000000); // SS_N, Reference Frequency 300MHz
+Triqadafi_FrequencyCounter QCM_Array(PA4, 300000000); // SS_N, Reference Frequency 300MHz
 
 void setup() {
   QCM_Array.begin();
@@ -118,7 +118,7 @@ Read All Channel every second (**STM32 Bluepill**)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
-Triqadafi_FrequencyCounter QCM_Array(PB0, 300000000); // SS_N, Reference Frequency 300MHz
+Triqadafi_FrequencyCounter QCM_Array(PA4, 300000000); // SS_N, Reference Frequency 300MHz
 
 void setup() {
   QCM_Array.begin();
