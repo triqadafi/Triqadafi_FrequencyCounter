@@ -1,5 +1,5 @@
 # Welcome!
-`Triqadafi Frequency Counter` - Handcrafted high resolution 8 channel frequency counter
+`Triqadafi Frequency Counter` - Handcrafted high resolution 8 channels frequency counter
 
 
 ## Compatible Hardware
