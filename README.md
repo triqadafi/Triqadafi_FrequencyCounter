@@ -1,6 +1,5 @@
 # Welcome!
-`Triqadafi Frequency Counter`  
-Handcrafted high resolution 8 channel frequency counter
+`Triqadafi Frequency Counter` - Handcrafted high resolution 8 channel frequency counter
 
 
 ## Compatible Hardware
@@ -42,7 +41,7 @@ Triqadafi_FrequencyCounter QCM_Array(uint8_t PIN_SS, long reference_frequency);
 misal: 
 - Arduino Nano => `D10`, 
 - STM32 Bluepill => `PA4`,
-- atau pin lainnya.
+- atau pin kosong lainnya juga dapat digunakan.
 
 **reference_frequency** merupakan nilai frekuensi referensi
 - default: `300000000` (berati 300,000,000 Hz = 300 MHz)
@@ -77,15 +76,15 @@ Parameter **channel**
 ```
 Dikarenakan proses perhitungan memerlukan `double`, pastikan menggunakan mikrokontroler dengan arsitektur 32 bit atau mikrokontroler yang mendukung operasi double precission floating point. Hal sangat disarankan untuk sehingga nantinya menjadi sangat mudah.
 
-Menggunakan `double` pada mikrokontroler 8 bit akan sama dengan menggunakan `float`. Hal ini berarti menggunakan single precission sehingga akan kehilangan resolusi. Hal ini sebenarnya dapat diatasi dengan menggunakan ekstensi contohnya https://fp64lib.org/. Perlu dipahami dulu boss ~
+Menggunakan `double` pada mikrokontroler 8 bit (Misal: Arduino Nano) akan sama dengan menggunakan `float`. Hal ini berarti menggunakan single precission sehingga akan kehilangan resolusi. Hal ini sebenarnya dapat diatasi dengan menggunakan ekstensi contohnya https://fp64lib.org/. Perlu dipahami dulu boss ~
 
 
 # Example
 
 ## Pin Configuration
-| Board Pin | Pin Function | Arduino (General) | STM32 (General) |
+| Board Pin | Pin Function | Arduino (Common) | STM32 (Common) |
 | ----------- | ----------- | ----------- | ----------- |
-| 1 | SS | D10 | PA4 |
+| 1 | SS_N | D10 | PA4 |
 | 2 | MISO | D12 | PA6 |
 | 3 | SCLK | D13 | PA5 |
 | 4 | GND | GND | GND |
@@ -136,15 +135,15 @@ void loop() {
   Serial.println();
 }
 ```
+
 # Troubleshooting :space_invader:
-## Data tidak terbaca? (300000000.000)?
+## Data tidak terbaca atau tidak berubah?
 - pastikan LED kiri bawa berkedip dengan delay 1 detik.
 - jika LED mati"
   - kemungkinan besar Board kekurangan daya.
   - gunakan power supply eksternal! 
-
-## Data tidak terbaca? (0.000)?
-- Salah satu kabel tidak terhubung
+- Salah satu kabel tidak terhubung!
+- Salah koneksi pin
 
 # Other Things
 - My Instagram: [@triqadafi](http://instagram.com/triqadafi)
