@@ -33,6 +33,7 @@ The library can be installed using the [standard Arduino library install procedu
 
 
 # Constructor
+## Initialization
 
 ```c++
 Triqadafi_FrequencyCounter QCM_Array(uint8_t PIN_SS, long reference_frequency);
@@ -55,7 +56,6 @@ Initialize the device, using pin D10 as SS pin, and reference frequency 300 MHz.
 
 
 ## Methods
------------------------
 ### Begin
 ```c++
 QCM_Array.begin();
@@ -96,7 +96,7 @@ Menggunakan `double` pada mikrokontroler 8 bit (Misal: Arduino Nano) akan sama d
 
 ## Program
 
-Read single channel every second (STM32 Bluepill)
+Read single channel every second (**STM32 Bluepill**)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
@@ -114,7 +114,7 @@ void loop() {
 }
 ```
 ----------
-Read All Channel every second (STM32 Bluepill)
+Read All Channel every second (**STM32 Bluepill**)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
 
