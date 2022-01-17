@@ -26,7 +26,8 @@ The library can be installed using the [standard Arduino library install procedu
 
 **OR** here some simple direction
 
-- Save the .zip file to your desktop,
+
+- Save the [.zip file](https://github.com/triqadafi/Triqadafi_FrequencyCounter/releases/download/v1.0/Triqadafi_FrequencyCounter-1.0.zip) to your desktop,
 - Open Arduino IDE
 - Go to Menu > `Sketch > Include Library > Add .ZIP library...`
 - Run some [example files](https://github.com/triqadafi/Triqadafi_FrequencyCounter/tree/master/examples) if you wish.
