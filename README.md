@@ -81,6 +81,20 @@ Menggunakan `double` pada mikrokontroler 8 bit akan sama dengan menggunakan `flo
 
 
 # Example
+
+## Pin Configuration
+| Board Pin | Pin Function | Arduino (General) | STM32 (General) |
+| ----------- | ----------- | ----------- | ----------- |
+| 1 | SS | D10 | PA4 |
+| 2 | MISO | D12 | PA6 |
+| 3 | SCLK | D13 | PA5 |
+| 4 | GND | GND | GND |
+| 5 | MOSI | D11 | PA7 |
+| 6 | INT | any | any |
+| 7 | 5V | 5V | 5V |
+
+## Program
+
 Read single channel every second (STM32 Bluepill)
 ```c++
 #include <Triqadafi_FrequencyCounter.h>
