@@ -90,8 +90,10 @@ Menggunakan `double` pada mikrokontroler 8 bit akan sama dengan menggunakan `flo
 | 3 | SCLK | D13 | PA5 |
 | 4 | GND | GND | GND |
 | 5 | MOSI | D11 | PA7 |
-| 6 | INT | any | any |
+| 6 | INT | NC | NC |
 | 7 | 5V | 5V | 5V |
+
+**NB:** Pin INT (interrupt belum difungsikan untuk saat ini :wink:)
 
 ## Program
 
@@ -134,7 +136,15 @@ void loop() {
   Serial.println();
 }
 ```
+# Troubleshooting :space_invader:
+## Data tidak terbaca? (300000000.000)?
+- pastikan LED kiri bawa berkedip dengan delay 1 detik.
+- jika LED mati"
+  - kemungkinan besar Board kekurangan daya.
+  - gunakan power supply eksternal! 
 
+## Data tidak terbaca? (0.000)?
+- Salah satu kabel tidak terhubung
 
 # Other Things
 - My Instagram: [@triqadafi](http://instagram.com/triqadafi)
