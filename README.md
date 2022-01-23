@@ -84,7 +84,7 @@ Menggunakan `double` pada mikrokontroler 8 bit (Misal: Arduino Nano) akan sama d
 
 ## Pin Configuration
 | Board Pin | Pin Function | Arduino (Common) | STM32 (Common) | | Raspberry Pico (Mbed Core)  | Raspberry Pico (Pico Core)
-| ----------- | ----------- | ----------- | ----------- |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1 | SS_N | D10 | PA4 | 5 | 17 |
 | 2 | MISO | D12 | PA6 | 4 | 16 |
 | 3 | SCLK | D13 | PA5 | 2 | 18 |
