@@ -22,6 +22,7 @@ void setup() {
   Serial.println("QCM_Array - @triqadafi");
 
   // configure interrupt
+  QCM_Array.setGatePeriodMS(1000); // change gate time to 1000ms
   pinMode(MCU_PIN_INT, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(MCU_PIN_INT), mcu_ISR, RISING);
 }
