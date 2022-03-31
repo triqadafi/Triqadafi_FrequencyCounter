@@ -5,6 +5,13 @@
 #ifndef Triqadafi_FrequencyCounter_h
 #define Triqadafi_FrequencyCounter_h
 
+#define FI_REGISTER_ACK 0x00
+#define FI_REGISTER_READ 0x40
+#define FI_REGISTER_WRITE 0x80
+#define FI_REGISTER_CHANNEL 0x10
+#define FI_REGISTER_REFERENCE 0x20
+#define FI_REGISTER_DEVICE_ID 0x30
+
 enum Triqadafi_Channels {
   CH_1,
   CH_2,
@@ -38,10 +45,13 @@ class Triqadafi_FrequencyCounter
      * 
      * @param channel channel yang dibaca 0-7
      */
+    bool getACK();
+    uint32_t getDeviceID();
+    void setGatePeriodMS(unsigned long period);
+
     double frequencyRead(uint8_t channel);
     double frequencyRead(int channel);
     double frequencyRead(Triqadafi_Channels channel);
-
     /**
      * @brief Inisialisasi
      * 
@@ -53,5 +63,7 @@ class Triqadafi_FrequencyCounter
     uint8_t _PIN_SS; /**< enum value TVal1. */  
     double _REFERENCE_FREQUENCY; /**< enum value TVal2. */  
     uint32_t readRegister(byte addr);
+    void writeRegister(byte addr, uint32_t value);
+
 };
 #endif
