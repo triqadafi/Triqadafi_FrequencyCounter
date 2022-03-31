@@ -1,5 +1,7 @@
 #include <Triqadafi_FrequencyCounter.h>
 
+#define MAIN_PERIOD 1000
+
 Triqadafi_FrequencyCounter QCM_Array(PA4, 300000000);
 // Using SS pin PA4 STM32 Bluepill
 // Reference Frequency 300MHz
@@ -20,6 +22,6 @@ void loop() {
   // CH_6 for channel 6
   // CH_7 for channel 7
   // CH_8 for channel 8
-  Serial.println(QCM_Array.frequencyRead(CH_1), 2); // 2 decimal places
-  delay(1000);
+  Serial.println(QCM_Array.frequencyRead(CH_1), 3); // 3 decimal places
+  delay(MAIN_PERIOD);
 }
