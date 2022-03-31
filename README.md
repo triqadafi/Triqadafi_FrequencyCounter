@@ -137,7 +137,7 @@ void loop() {
   Serial.println();
 }
 ```
-
+More example including interrupt check at https://github.com/triqadafi/Triqadafi_FrequencyCounter/tree/master/examples
 # Troubleshooting :space_invader:
 ## Data tidak terbaca atau tidak berubah?
 - pastikan LED kiri bawah berkedip dengan delay 1 detik.
