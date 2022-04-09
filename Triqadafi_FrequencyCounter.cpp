@@ -42,7 +42,7 @@ uint32_t Triqadafi_FrequencyCounter::getDeviceID(){
 void Triqadafi_FrequencyCounter::setGatePeriodMS(unsigned long period){
   unsigned long gate_frequency_hz = 100000000;
   unsigned long gate_period_half = gate_frequency_hz/2;
-  float period_ms_to_s = period / 1000;
+  float period_ms_to_s = period / 1000.0;
   unsigned long result = period_ms_to_s * gate_period_half;
 
   writeRegister(0b10000001, result);
