@@ -77,7 +77,7 @@ Parameter **channel**
 ```
 Dikarenakan proses perhitungan memerlukan `double`, pastikan menggunakan mikrokontroler dengan arsitektur 32 bit atau mikrokontroler yang mendukung operasi double precission floating point. Hal sangat disarankan untuk sehingga nantinya menjadi sangat mudah.
 
-Menggunakan `double` pada mikrokontroler 8 bit (Misal: Arduino Nano) akan sama dengan menggunakan `float`. Hal ini berarti menggunakan single precission sehingga akan kehilangan resolusi. Hal ini sebenarnya dapat diatasi dengan menggunakan ekstensi contohnya https://fp64lib.org/. Perlu dipahami dulu boss ~
+Menggunakan `double` pada mikrokontroler 8 bit (Misal: Arduino Nano) akan sama dengan menggunakan `float`. Hal ini berarti menggunakan single precission sehingga akan kehilangan resolusi. Hal ini sebenarnya dapat diatasi dengan menggunakan ekstensi contohnya https://fp64lib.org/. Perlu dipahami dulu. Sangat tidak disarankan, unless you know what you're doing :)
 
 
 # Example
@@ -137,7 +137,7 @@ void loop() {
   Serial.println();
 }
 ```
-
+More example including interrupt check at https://github.com/triqadafi/Triqadafi_FrequencyCounter/tree/master/examples
 # Troubleshooting :space_invader:
 ## Data tidak terbaca atau tidak berubah?
 - pastikan LED kiri bawah berkedip dengan delay 1 detik.
