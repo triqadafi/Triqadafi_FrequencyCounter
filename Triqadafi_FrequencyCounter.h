@@ -62,6 +62,9 @@ class Triqadafi_FrequencyCounter
   private:
     uint8_t _PIN_SS; /**< enum value TVal1. */  
     double _REFERENCE_FREQUENCY; /**< enum value TVal2. */  
+    double _TIME_GATE_MS = 1000; /**< enum value TVal2. */  
+    int _REFERENCE_COMPENSATION = 1; /**< enum value TVal2. */  
+    
     uint32_t readRegister(byte addr);
     void writeRegister(byte addr, uint32_t value);
 

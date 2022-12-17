@@ -13,7 +13,8 @@ void Triqadafi_FrequencyCounter::begin(){
 
 double Triqadafi_FrequencyCounter::frequencyRead(uint8_t channel){
 	unsigned long chx = readRegister(FI_REGISTER_READ | FI_REGISTER_CHANNEL | channel);
-	unsigned long ref = readRegister(FI_REGISTER_READ | FI_REGISTER_REFERENCE | channel);
+	unsigned long ref = readRegister(FI_REGISTER_READ | FI_REGISTER_REFERENCE | channel) + _REFERENCE_COMPENSATION;
+  // Serial.println();
   // Serial.print(chx);
   // Serial.print(";");
   // Serial.print(ref);
@@ -21,7 +22,7 @@ double Triqadafi_FrequencyCounter::frequencyRead(uint8_t channel){
   if(ref == 0){
     return 0;
   }else{
-    return chx*_REFERENCE_FREQUENCY/ref;
+    return chx*(_REFERENCE_FREQUENCY)/(ref);
   }
 }
 double Triqadafi_FrequencyCounter::frequencyRead(int channel){
@@ -40,6 +41,7 @@ uint32_t Triqadafi_FrequencyCounter::getDeviceID(){
   return result;
 }
 void Triqadafi_FrequencyCounter::setGatePeriodMS(unsigned long period){
+  _TIME_GATE_MS = period;
   unsigned long gate_frequency_hz = 100000000;
   unsigned long gate_period_half = gate_frequency_hz/2;
   float period_ms_to_s = period / 1000.0;
