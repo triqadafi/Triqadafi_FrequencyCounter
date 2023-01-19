@@ -6,9 +6,12 @@ Triqadafi_FrequencyCounter::Triqadafi_FrequencyCounter(uint8_t PIN_SS, long refe
 }
 
 void Triqadafi_FrequencyCounter::begin(){
-  SPI.begin();
   pinMode(_PIN_SS, OUTPUT);
   digitalWrite(_PIN_SS,HIGH);
+
+  SPI.begin();
+
+
 }
 
 double Triqadafi_FrequencyCounter::frequencyRead(uint8_t channel){
@@ -65,6 +68,10 @@ uint32_t Triqadafi_FrequencyCounter::readRegister(byte addr){
   uint32_t result = 0;
   uint8_t temp;
 
+  SPISettings settings = SPISettings(4000000, MSBFIRST, SPI_MODE0); // fix conflict with other library
+  // SPISettings settings = SPISettings(250000, MSBFIRST, SPI_MODE0);
+  SPI.beginTransaction(settings); 
+
   digitalWrite(_PIN_SS, LOW);
   SPI.transfer(addr);  // instruction byte
   // Split Request into 8-bit sections and sending them one byte at a time
@@ -80,6 +87,8 @@ uint32_t Triqadafi_FrequencyCounter::readRegister(byte addr){
   result = (result << 8) | temp;
 
   digitalWrite(_PIN_SS, HIGH);
+  SPI.endTransaction();  // fix conflict with other library
   delay(1);
+
   return (result);
 }
