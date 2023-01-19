@@ -54,6 +54,8 @@ void Triqadafi_FrequencyCounter::setGatePeriodMS(unsigned long period){
 }
 
 void Triqadafi_FrequencyCounter::writeRegister(byte addr, uint32_t value){
+  SPISettings settings = SPISettings(4000000, MSBFIRST, SPI_MODE0); // fix conflict with other library
+  SPI.beginTransaction(settings); 
   digitalWrite(_PIN_SS, LOW);
   SPI.transfer(addr);  // instruction byte
   SPI.transfer((value >> 24) & 0xFF);
@@ -61,6 +63,7 @@ void Triqadafi_FrequencyCounter::writeRegister(byte addr, uint32_t value){
   SPI.transfer((value >> 8) & 0xFF);
   SPI.transfer((value >> 0) & 0xFF);
   digitalWrite(_PIN_SS, HIGH);
+  SPI.endTransaction();  // fix conflict with other library
   delay(1);
 }
 
